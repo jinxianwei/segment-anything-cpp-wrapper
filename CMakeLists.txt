@@ -17,15 +17,11 @@ else()
   target_include_directories(sam_cpp_lib PRIVATE ${ONNXRUNTIME_ROOT_DIR}/include)
 endif()
 
-# include_directories("D:/source_package_code/gflags-2.2.2/build/include")
-
-# link_directories("D:/source_package_code/gflags-2.2.2/build/lib/Debug")
-# link_libraries("gflags_nothreads_static_debug.lib")
-# link_libraries("gflags_static_debug.lib")
 target_link_libraries(sam_cpp_lib PRIVATE
   ${onnxruntime_lib}
   ${OpenCV_LIBS}
 )
+
 add_executable(sam_cpp_test test.cpp)
 target_include_directories(sam_cpp_test PRIVATE "D:/source_package_code/gflags-2.2.2/build/include")
 target_link_directories(sam_cpp_test PRIVATE "D:/source_package_code/gflags-2.2.2/build/lib/Debug")
